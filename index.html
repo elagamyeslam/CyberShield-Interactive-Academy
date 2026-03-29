@@ -1,704 +1,704 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>CyberShield Academy | Interactive Cybersecurity Platform</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>CyberShield Academy | Interactive Cybersecurity Platform</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-body {
-  background: radial-gradient(circle at 10% 20%, #0a0f2a, #030617);
-  font-family: 'Segoe UI', 'Tahoma', system-ui, -apple-system, sans-serif;
-  color: #f0f4ff;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
+      body {
+        background: radial-gradient(circle at 10% 20%, #0a0f2a, #030617);
+        font-family: 'Segoe UI', 'Tahoma', system-ui, -apple-system, sans-serif;
+        color: #f0f4ff;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+      }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #0f172a;
-}
-::-webkit-scrollbar-thumb {
-  background: #3b82f6;
-  border-radius: 10px;
-}
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3b82f6;
+        border-radius: 10px;
+      }
 
-.glass-header {
-  background: rgba(2, 6, 23, 0.75);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(59,130,246,0.3);
-  padding: 1.2rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+      .glass-header {
+        background: rgba(2, 6, 23, 0.75);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(59,130,246,0.3);
+        padding: 1.2rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
 
-.header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
+      .header-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
 
-.logo h1 {
-  font-size: 1.8rem;
-  background: linear-gradient(135deg, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-}
+      .logo h1 {
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #60a5fa, #a78bfa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+      }
 
-.threat-level {
-  background: #1e293b;
-  padding: 6px 16px;
-  border-radius: 40px;
-  font-weight: bold;
-  box-shadow: 0 0 8px rgba(239,68,68,0.3);
-  transition: 0.3s;
-}
+      .threat-level {
+        background: #1e293b;
+        padding: 6px 16px;
+        border-radius: 40px;
+        font-weight: bold;
+        box-shadow: 0 0 8px rgba(239,68,68,0.3);
+        transition: 0.3s;
+      }
 
-.section {
-  padding: 2.5rem 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
+      .section {
+        padding: 2.5rem 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
 
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  border-left: 5px solid #3b82f6;
-  padding-left: 20px;
-  display: inline-block;
-}
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        border-left: 5px solid #3b82f6;
+        padding-left: 20px;
+        display: inline-block;
+      }
 
-.grid-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 20px;
-}
+      .grid-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+      }
 
-.card-3d {
-  background: rgba(30, 41, 59, 0.7);
-  backdrop-filter: blur(4px);
-  border-radius: 28px;
-  padding: 1.5rem;
-  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-  border: 1px solid rgba(59,130,246,0.2);
-  cursor: pointer;
-}
+      .card-3d {
+        background: rgba(30, 41, 59, 0.7);
+        backdrop-filter: blur(4px);
+        border-radius: 28px;
+        padding: 1.5rem;
+        transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        border: 1px solid rgba(59,130,246,0.2);
+        cursor: pointer;
+      }
 
-.card-3d:hover {
-  transform: translateY(-8px) scale(1.02);
-  background: #1e293b;
-  border-color: #3b82f6;
-  box-shadow: 0 20px 30px -12px rgba(0,0,0,0.5);
-}
+      .card-3d:hover {
+        transform: translateY(-8px) scale(1.02);
+        background: #1e293b;
+        border-color: #3b82f6;
+        box-shadow: 0 20px 30px -12px rgba(0,0,0,0.5);
+      }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+      }
 
-.badge-risk {
-  background: #dc2626;
-  border-radius: 30px;
-  padding: 4px 12px;
-  font-size: 0.7rem;
-  font-weight: bold;
-}
+      .badge-risk {
+        background: #dc2626;
+        border-radius: 30px;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        font-weight: bold;
+      }
 
-.badge-medium {
-  background: #f97316;
-  border-radius: 30px;
-  padding: 4px 12px;
-  font-size: 0.7rem;
-  font-weight: bold;
-}
+      .badge-medium {
+        background: #f97316;
+        border-radius: 30px;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        font-weight: bold;
+      }
 
-.badge-financial {
-  background: #eab308;
-  border-radius: 30px;
-  padding: 4px 12px;
-  font-size: 0.7rem;
-  font-weight: bold;
-}
+      .badge-financial {
+        background: #eab308;
+        border-radius: 30px;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        font-weight: bold;
+      }
 
-.hidden-text {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out;
-  margin-top: 12px;
-  font-size: 0.9rem;
-  color: #cbd5e6;
-}
+      .hidden-text {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        margin-top: 12px;
+        font-size: 0.9rem;
+        color: #cbd5e6;
+      }
 
-.hidden-text.show {
-  max-height: 200px;
-}
+      .hidden-text.show {
+        max-height: 200px;
+      }
 
-.progress-container {
-  background: #0f172a;
-  border-radius: 20px;
-  height: 8px;
-  margin: 15px 0 5px;
-  overflow: hidden;
-}
+      .progress-container {
+        background: #0f172a;
+        border-radius: 20px;
+        height: 8px;
+        margin: 15px 0 5px;
+        overflow: hidden;
+      }
 
-.progress-fill {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, #22c55e, #3b82f6);
-  border-radius: 20px;
-  transition: width 1s ease;
-}
+      .progress-fill {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #22c55e, #3b82f6);
+        border-radius: 20px;
+        transition: width 1s ease;
+      }
 
-.threat-meter {
-  background: #0f172a;
-  border-radius: 30px;
-  padding: 6px 12px;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-.meter-bar {
-  width: 120px;
-  background: #2d3748;
-  border-radius: 20px;
-  height: 12px;
-  overflow: hidden;
-}
-.meter-level {
-  height: 100%;
-  width: 45%;
-  background: #f97316;
-  border-radius: 20px;
-  transition: width 0.4s;
-}
+      .threat-meter {
+        background: #0f172a;
+        border-radius: 30px;
+        padding: 6px 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .meter-bar {
+        width: 120px;
+        background: #2d3748;
+        border-radius: 20px;
+        height: 12px;
+        overflow: hidden;
+      }
+      .meter-level {
+        height: 100%;
+        width: 45%;
+        background: #f97316;
+        border-radius: 20px;
+        transition: width 0.4s;
+      }
 
-.chatbot-area {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 99;
-}
-.chat-toggle {
-  background: #2563eb;
-  border-radius: 60px;
-  padding: 12px 20px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(37,99,235,0.4);
-  transition: 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.chat-window {
-  background: #0f172a;
-  width: 300px;
-  border-radius: 24px;
-  position: absolute;
-  bottom: 70px;
-  right: 0;
-  display: none;
-  flex-direction: column;
-  border: 1px solid #3b82f6;
-  overflow: hidden;
-  box-shadow: 0 20px 30px black;
-}
-.chat-header {
-  background: #1e293b;
-  padding: 12px;
-  font-weight: bold;
-  text-align: center;
-}
-.chat-messages {
-  height: 300px;
-  overflow-y: auto;
-  padding: 10px;
-  font-size: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.chat-input-area {
-  display: flex;
-  border-top: 1px solid #334155;
-}
-.chat-input-area input {
-  flex: 1;
-  background: #020617;
-  border: none;
-  padding: 10px;
-  color: white;
-  outline: none;
-}
-.chat-input-area button {
-  background: #3b82f6;
-  border: none;
-  padding: 0 12px;
-  cursor: pointer;
-  color: white;
-}
+      .chatbot-area {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 99;
+      }
+      .chat-toggle {
+        background: #2563eb;
+        border-radius: 60px;
+        padding: 12px 20px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+        transition: 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .chat-window {
+        background: #0f172a;
+        width: 300px;
+        border-radius: 24px;
+        position: absolute;
+        bottom: 70px;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        border: 1px solid #3b82f6;
+        overflow: hidden;
+        box-shadow: 0 20px 30px black;
+      }
+      .chat-header {
+        background: #1e293b;
+        padding: 12px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .chat-messages {
+        height: 300px;
+        overflow-y: auto;
+        padding: 10px;
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .chat-input-area {
+        display: flex;
+        border-top: 1px solid #334155;
+      }
+      .chat-input-area input {
+        flex: 1;
+        background: #020617;
+        border: none;
+        padding: 10px;
+        color: white;
+        outline: none;
+      }
+      .chat-input-area button {
+        background: #3b82f6;
+        border: none;
+        padding: 0 12px;
+        cursor: pointer;
+        color: white;
+      }
 
-.score-card {
-  background: linear-gradient(145deg, #1e293b, #0f172a);
-  border-radius: 32px;
-  padding: 20px;
-  text-align: center;
-  margin-top: 30px;
-}
-.score-circle {
-  width: 130px;
-  height: 130px;
-  margin: 0 auto;
-  background: conic-gradient(#22c55e 0deg 0deg, #334155 0deg 360deg);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  transition: all 0.6s;
-}
+      .score-card {
+        background: linear-gradient(145deg, #1e293b, #0f172a);
+        border-radius: 32px;
+        padding: 20px;
+        text-align: center;
+        margin-top: 30px;
+      }
+      .score-circle {
+        width: 130px;
+        height: 130px;
+        margin: 0 auto;
+        background: conic-gradient(#22c55e 0deg 0deg, #334155 0deg 360deg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        transition: all 0.6s;
+      }
 
-.quiz-block {
-  background: #0f172a;
-  border-radius: 28px;
-  padding: 1.5rem;
-  margin: 20px 0;
-}
-.btn-primary {
-  background: #3b82f6;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 40px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-  margin: 5px;
-}
-.btn-primary:hover {
-  background: #2563eb;
-  transform: scale(1.02);
-}
+      .quiz-block {
+        background: #0f172a;
+        border-radius: 28px;
+        padding: 1.5rem;
+        margin: 20px 0;
+      }
+      .btn-primary {
+        background: #3b82f6;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 40px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+        margin: 5px;
+      }
+      .btn-primary:hover {
+        background: #2563eb;
+        transform: scale(1.02);
+      }
 
-.btn-small {
-  background: #3b82f6;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 30px;
-  color: white;
-  font-size: 0.8rem;
-  cursor: pointer;
-  margin-top: 10px;
-}
+      .btn-small {
+        background: #3b82f6;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 30px;
+        color: white;
+        font-size: 0.8rem;
+        cursor: pointer;
+        margin-top: 10px;
+      }
 
-footer {
-  background: #020617;
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-  border-top: 1px solid #1e293b;
-}
+      footer {
+        background: #020617;
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+        border-top: 1px solid #1e293b;
+      }
 
-@media (max-width: 700px) {
-  .section {
-    padding: 1.5rem;
-  }
-  .section-title {
-    font-size: 1.6rem;
-  }
-  .chat-window {
-    width: 280px;
-    right: 0;
-  }
-}
-</style>
-</head>
-<body>
+      @media (max-width: 700px) {
+        .section {
+          padding: 1.5rem;
+        }
+        .section-title {
+          font-size: 1.6rem;
+        }
+        .chat-window {
+          width: 280px;
+          right: 0;
+        }
+      }
+      </style>
+    </head>
+  <body>
 
-<header class="glass-header">
-  <div class="header-flex">
-    <div class="logo">
-      <h1>🛡️ CyberShield | Interactive Academy</h1>
-      <p style="font-size: 0.8rem;">Secure Digital Transformation Learning Platform</p>
+  <header class="glass-header">
+    <div class="header-flex">
+      <div class="logo">
+        <h1>🛡️ CyberShield | Interactive Academy</h1>
+        <p style="font-size: 0.8rem;">Secure Digital Transformation Learning Platform</p>
+      </div>
+      <div class="threat-level">
+        <span>🌍 Global Threat Index: </span>
+        <span id="globalThreatText">Moderate</span>
+        <div class="threat-meter">
+          <div class="meter-bar"><div class="meter-level" id="threatMeterFill" style="width: 45%;"></div></div>
+        </div>
+      </div>
     </div>
-    <div class="threat-level">
-      <span>🌍 Global Threat Index: </span>
-      <span id="globalThreatText">Moderate</span>
-      <div class="threat-meter">
-        <div class="meter-bar"><div class="meter-level" id="threatMeterFill" style="width: 45%;"></div></div>
+  </header>
+
+  <!-- Introduction Section -->
+  <div class="section">
+    <h2 class="section-title">🌍 What is Digital Transformation?</h2>
+    <p style="font-size: 1.1rem; max-width: 800px;">Digital transformation is the integration of digital technologies into all areas of business, fundamentally changing operations and delivering value to customers. However, it introduces <strong style="color:#f97316">critical cybersecurity challenges</strong> that must be addressed.</p>
+    <div class="score-card" id="securityScoreWidget">
+      <h3>📊 Your Personal Security Score</h3>
+      <div class="score-circle" id="scoreCircle">0%</div>
+      <p>Interact with cards, take quizzes & explore to boost your security score!</p>
+      <button class="btn-primary" id="resetScoreBtn">🔄 Reset Progress</button>
+    </div>
+  </div>
+
+  <!-- Risks Section -->
+  <div class="section">
+    <h2 class="section-title">⚠️ Digital Transformation Risks</h2>
+    <div class="grid-cards">
+      <div class="card-3d" data-risk="dataLoss" data-points="25">
+        <div class="card-header"><h3>💾 Data Loss</h3><span class="badge-risk">Critical</span></div>
+        <p>Malware attacks, system failures, or human errors leading to irreversible data destruction.</p>
+        <div id="detailsDataLoss" class="hidden-text">⚠️ Global cost of data loss exceeds $4M per incident. Solution: Implement 3-2-1 backup strategy (3 copies, 2 media types, 1 off-site).</div>
+        <div class="progress-container"><div class="progress-fill" id="progressDataLoss"></div></div>
+        <span style="font-size:12px">✨ Click to reveal details + earn points</span>
+      </div>
+      <div class="card-3d" data-risk="overdep" data-points="20">
+        <div class="card-header"><h3>🔗 Technology Overdependence</h3><span class="badge-medium">High</span></div>
+        <p>Complete business paralysis when cloud services fail or internet connectivity is disrupted.</p>
+        <div id="detailsOverdep" class="hidden-text">📌 Mitigation: Adopt hybrid infrastructure, develop Business Continuity Plans (BCP), and maintain offline capabilities.</div>
+        <div class="progress-container"><div class="progress-fill" id="progressOverdep"></div></div>
+      </div>
+      <div class="card-3d" data-risk="highCost" data-points="15">
+        <div class="card-header"><h3>💰 Implementation Costs</h3><span class="badge-financial">Financial</span></div>
+        <p>Massive investments in infrastructure, training, and continuous security updates.</p>
+        <div id="detailsCost" class="hidden-text">💡 Smart approach: Use open-source solutions, prioritize critical assets, implement phased数字化转型 strategies.</div>
+        <div class="progress-container"><div class="progress-fill" id="progressCost"></div></div>
       </div>
     </div>
   </div>
-</header>
 
-<!-- Introduction Section -->
-<div class="section">
-  <h2 class="section-title">🌍 What is Digital Transformation?</h2>
-  <p style="font-size: 1.1rem; max-width: 800px;">Digital transformation is the integration of digital technologies into all areas of business, fundamentally changing operations and delivering value to customers. However, it introduces <strong style="color:#f97316">critical cybersecurity challenges</strong> that must be addressed.</p>
-  <div class="score-card" id="securityScoreWidget">
-    <h3>📊 Your Personal Security Score</h3>
-    <div class="score-circle" id="scoreCircle">0%</div>
-    <p>Interact with cards, take quizzes & explore to boost your security score!</p>
-    <button class="btn-primary" id="resetScoreBtn">🔄 Reset Progress</button>
-  </div>
-</div>
-
-<!-- Risks Section -->
-<div class="section">
-  <h2 class="section-title">⚠️ Digital Transformation Risks</h2>
-  <div class="grid-cards">
-    <div class="card-3d" data-risk="dataLoss" data-points="25">
-      <div class="card-header"><h3>💾 Data Loss</h3><span class="badge-risk">Critical</span></div>
-      <p>Malware attacks, system failures, or human errors leading to irreversible data destruction.</p>
-      <div id="detailsDataLoss" class="hidden-text">⚠️ Global cost of data loss exceeds $4M per incident. Solution: Implement 3-2-1 backup strategy (3 copies, 2 media types, 1 off-site).</div>
-      <div class="progress-container"><div class="progress-fill" id="progressDataLoss"></div></div>
-      <span style="font-size:12px">✨ Click to reveal details + earn points</span>
-    </div>
-    <div class="card-3d" data-risk="overdep" data-points="20">
-      <div class="card-header"><h3>🔗 Technology Overdependence</h3><span class="badge-medium">High</span></div>
-      <p>Complete business paralysis when cloud services fail or internet connectivity is disrupted.</p>
-      <div id="detailsOverdep" class="hidden-text">📌 Mitigation: Adopt hybrid infrastructure, develop Business Continuity Plans (BCP), and maintain offline capabilities.</div>
-      <div class="progress-container"><div class="progress-fill" id="progressOverdep"></div></div>
-    </div>
-    <div class="card-3d" data-risk="highCost" data-points="15">
-      <div class="card-header"><h3>💰 Implementation Costs</h3><span class="badge-financial">Financial</span></div>
-      <p>Massive investments in infrastructure, training, and continuous security updates.</p>
-      <div id="detailsCost" class="hidden-text">💡 Smart approach: Use open-source solutions, prioritize critical assets, implement phased数字化转型 strategies.</div>
-      <div class="progress-container"><div class="progress-fill" id="progressCost"></div></div>
+  <!-- Cyber Attacks Section -->
+  <div class="section">
+    <h2 class="section-title">💀 Most Devastating Cyber Attacks</h2>
+    <div class="grid-cards">
+      <div class="card-3d" data-attack="ransom">
+        <h3>🔒 Ransomware</h3>
+        <p>Malicious software that encrypts data and demands cryptocurrency payment.</p>
+        <div class="hidden-text" id="ransomDetail">🚨 Statistics: Attack occurs every 11 seconds globally. Average ransom payment: $1.5M. Prevention: Regular offline backups, employee training.</div>
+        <button class="btn-small info-btn" data-info="ransom">Learn More +10 pts</button>
+      </div>
+      <div class="card-3d" data-attack="phish">
+        <h3>🎣 Phishing Attacks</h3>
+        <p>Deceptive emails and messages designed to steal credentials and sensitive data.</p>
+        <div class="hidden-text" id="phishDetail">📧 83% of organizations experienced successful phishing attacks. Always verify sender addresses, enable 2FA, and never click suspicious links.</div>
+        <button class="btn-small info-btn" data-info="phish">Learn More +10 pts</button>
+      </div>
+      <div class="card-3d" data-attack="ddos">
+        <h3>🌊 DDoS Attacks</h3>
+        <p>Overwhelming servers with traffic to disrupt services and cause downtime.</p>
+        <div class="hidden-text" id="ddosDetail">🛡️ Protection: Use CDN services, implement rate limiting, deploy Web Application Firewalls (WAF), and maintain冗余 bandwidth.</div>
+        <button class="btn-small info-btn" data-info="ddos">Learn More +10 pts</button>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Cyber Attacks Section -->
-<div class="section">
-  <h2 class="section-title">💀 Most Devastating Cyber Attacks</h2>
-  <div class="grid-cards">
-    <div class="card-3d" data-attack="ransom">
-      <h3>🔒 Ransomware</h3>
-      <p>Malicious software that encrypts data and demands cryptocurrency payment.</p>
-      <div class="hidden-text" id="ransomDetail">🚨 Statistics: Attack occurs every 11 seconds globally. Average ransom payment: $1.5M. Prevention: Regular offline backups, employee training.</div>
-      <button class="btn-small info-btn" data-info="ransom">Learn More +10 pts</button>
+  <!-- Solutions Section -->
+  <div class="section">
+    <h2 class="section-title">🛡️ Enterprise Security Solutions</h2>
+    <div class="grid-cards">
+      <div class="card-3d"><h3>🔥 Next-Gen Firewall (NGFW)</h3><p>Deep packet inspection, application control, and intrusion prevention systems.</p></div>
+      <div class="card-3d"><h3>🔐 End-to-End Encryption</h3><p>Protect data at rest and in transit with AES-256 and TLS 1.3 protocols.</p></div>
+      <div class="card-3d"><h3>💾 3-2-1 Backup Strategy</h3><p>3 copies of data, 2 different media types, 1 copy stored off-site or in cloud.</p></div>
     </div>
-    <div class="card-3d" data-attack="phish">
-      <h3>🎣 Phishing Attacks</h3>
-      <p>Deceptive emails and messages designed to steal credentials and sensitive data.</p>
-      <div class="hidden-text" id="phishDetail">📧 83% of organizations experienced successful phishing attacks. Always verify sender addresses, enable 2FA, and never click suspicious links.</div>
-      <button class="btn-small info-btn" data-info="phish">Learn More +10 pts</button>
-    </div>
-    <div class="card-3d" data-attack="ddos">
-      <h3>🌊 DDoS Attacks</h3>
-      <p>Overwhelming servers with traffic to disrupt services and cause downtime.</p>
-      <div class="hidden-text" id="ddosDetail">🛡️ Protection: Use CDN services, implement rate limiting, deploy Web Application Firewalls (WAF), and maintain冗余 bandwidth.</div>
-      <button class="btn-small info-btn" data-info="ddos">Learn More +10 pts</button>
-    </div>
-  </div>
-</div>
-
-<!-- Solutions Section -->
-<div class="section">
-  <h2 class="section-title">🛡️ Enterprise Security Solutions</h2>
-  <div class="grid-cards">
-    <div class="card-3d"><h3>🔥 Next-Gen Firewall (NGFW)</h3><p>Deep packet inspection, application control, and intrusion prevention systems.</p></div>
-    <div class="card-3d"><h3>🔐 End-to-End Encryption</h3><p>Protect data at rest and in transit with AES-256 and TLS 1.3 protocols.</p></div>
-    <div class="card-3d"><h3>💾 3-2-1 Backup Strategy</h3><p>3 copies of data, 2 different media types, 1 copy stored off-site or in cloud.</p></div>
-  </div>
-  
-  <!-- Interactive Quiz -->
-  <div class="quiz-block">
-    <h3>🎯 Knowledge Challenge: Identify the Attack</h3>
-    <p>Which cyber attack tricks users into revealing credentials through fake emails or websites?</p>
-    <button class="btn-primary quiz-btn" data-answer="phishing">Phishing</button>
-    <button class="btn-primary quiz-btn" data-answer="ddos">DDoS</button>
-    <button class="btn-primary quiz-btn" data-answer="ransomware">Ransomware</button>
-    <p id="quizFeedback" style="margin-top: 12px; font-weight: bold;"></p>
-  </div>
-  
-  <!-- Daily Security Tip -->
-  <div style="background: #00000030; border-radius: 28px; padding: 1.5rem; margin-top: 20px;">
-    <h3>✨ Daily Security Tip ✨</h3>
-    <p id="dailyTip" style="font-size: 1.1rem;">Enable Two-Factor Authentication (2FA) on all critical accounts immediately.</p>
-    <button class="btn-primary" id="newTipBtn">Get New Tip</button>
-  </div>
-</div>
-
-<!-- Statistics & Impact Section -->
-<div class="section">
-  <h2 class="section-title">📊 Global Cybersecurity Impact</h2>
-  <div class="grid-cards">
-    <div class="card-3d">
-      <h3>💰 $10.5 Trillion</h3>
-      <p>Projected annual cybercrime cost by 2025</p>
-    </div>
-    <div class="card-3d">
-      <h3>⏱️ 204 Days</h3>
-      <p>Average time to identify a data breach</p>
-    </div>
-    <div class="card-3d">
-      <h3>📈 300% Increase</h3>
-      <p>Ransomware attacks since digital transformation acceleration</p>
-    </div>
-  </div>
-</div>
-
-<!-- AI Chatbot Assistant -->
-<div class="chatbot-area">
-  <div class="chat-toggle" id="chatToggle">💬 CyberGuard AI Assistant</div>
-  <div class="chat-window" id="chatWindow">
-    <div class="chat-header">🛡️ Ask me anything about cybersecurity</div>
-    <div class="chat-messages" id="chatMessages">
-      <div style="background:#1e293b; padding:6px 10px; border-radius:16px; margin:4px 0;">🤖 Hello! Ask me about ransomware, phishing, DDoS attacks, or security best practices.</div>
-    </div>
-    <div class="chat-input-area">
-      <input type="text" id="chatInput" placeholder="Type your question...">
-      <button id="sendChatBtn">Send</button>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <p>🎓 Advanced Cybersecurity Learning Platform | Interactive Dashboard for Digital Transformation Security</p>
-  <p style="font-size:0.8rem; margin-top:8px;">© 2025 CyberShield Academy - All scenarios for educational purposes</p>
-</footer>
-
-<script>
-  // Points System & Security Score
-  let userPoints = 0;
-  let maxPointsPossible = 150;
-  let interactedRisks = new Set();
-  let quizCompleted = false;
-
-  function updateSecurityScore() {
-    let percent = Math.min(100, Math.floor((userPoints / maxPointsPossible) * 100));
-    if (isNaN(percent)) percent = 0;
-    const circle = document.getElementById('scoreCircle');
-    const gradientDeg = (percent / 100) * 360;
-    circle.style.background = `conic-gradient(#22c55e 0deg ${gradientDeg}deg, #334155 ${gradientDeg}deg 360deg)`;
-    circle.innerText = percent + "%";
     
-    let threatLevel = "High 🔴";
-    let threatWidth = 70;
-    if(percent >= 70) { threatLevel = "Low 🟢"; threatWidth = 25; }
-    else if(percent >= 40) { threatLevel = "Moderate 🟠"; threatWidth = 55; }
-    else { threatLevel = "High 🔴"; threatWidth = 80; }
-    document.getElementById('globalThreatText').innerText = threatLevel;
-    document.getElementById('threatMeterFill').style.width = threatWidth + "%";
-  }
+    <!-- Interactive Quiz -->
+    <div class="quiz-block">
+      <h3>🎯 Knowledge Challenge: Identify the Attack</h3>
+      <p>Which cyber attack tricks users into revealing credentials through fake emails or websites?</p>
+      <button class="btn-primary quiz-btn" data-answer="phishing">Phishing</button>
+      <button class="btn-primary quiz-btn" data-answer="ddos">DDoS</button>
+      <button class="btn-primary quiz-btn" data-answer="ransomware">Ransomware</button>
+      <p id="quizFeedback" style="margin-top: 12px; font-weight: bold;"></p>
+    </div>
+    
+    <!-- Daily Security Tip -->
+    <div style="background: #00000030; border-radius: 28px; padding: 1.5rem; margin-top: 20px;">
+      <h3>✨ Daily Security Tip ✨</h3>
+      <p id="dailyTip" style="font-size: 1.1rem;">Enable Two-Factor Authentication (2FA) on all critical accounts immediately.</p>
+      <button class="btn-primary" id="newTipBtn">Get New Tip</button>
+    </div>
+  </div>
 
-  function addPoints(amount, interactionId) {
-    if(!interactedRisks.has(interactionId)) {
-      interactedRisks.add(interactionId);
-      userPoints += amount;
-      if(userPoints > maxPointsPossible) userPoints = maxPointsPossible;
+  <!-- Statistics & Impact Section -->
+  <div class="section">
+    <h2 class="section-title">📊 Global Cybersecurity Impact</h2>
+    <div class="grid-cards">
+      <div class="card-3d">
+        <h3>💰 $10.5 Trillion</h3>
+        <p>Projected annual cybercrime cost by 2025</p>
+      </div>
+      <div class="card-3d">
+        <h3>⏱️ 204 Days</h3>
+        <p>Average time to identify a data breach</p>
+      </div>
+      <div class="card-3d">
+        <h3>📈 300% Increase</h3>
+        <p>Ransomware attacks since digital transformation acceleration</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Chatbot Assistant -->
+  <div class="chatbot-area">
+    <div class="chat-toggle" id="chatToggle">💬 CyberGuard AI Assistant</div>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">🛡️ Ask me anything about cybersecurity</div>
+      <div class="chat-messages" id="chatMessages">
+        <div style="background:#1e293b; padding:6px 10px; border-radius:16px; margin:4px 0;">🤖 Hello! Ask me about ransomware, phishing, DDoS attacks, or security best practices.</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Type your question...">
+        <button id="sendChatBtn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>🎓 Advanced Cybersecurity Learning Platform | Interactive Dashboard for Digital Transformation Security</p>
+    <p style="font-size:0.8rem; margin-top:8px;">© 2025 CyberShield Academy - All scenarios for educational purposes</p>
+  </footer>
+
+  <script>
+    // Points System & Security Score
+    let userPoints = 0;
+    let maxPointsPossible = 150;
+    let interactedRisks = new Set();
+    let quizCompleted = false;
+
+    function updateSecurityScore() {
+      let percent = Math.min(100, Math.floor((userPoints / maxPointsPossible) * 100));
+      if (isNaN(percent)) percent = 0;
+      const circle = document.getElementById('scoreCircle');
+      const gradientDeg = (percent / 100) * 360;
+      circle.style.background = `conic-gradient(#22c55e 0deg ${gradientDeg}deg, #334155 ${gradientDeg}deg 360deg)`;
+      circle.innerText = percent + "%";
+      
+      let threatLevel = "High 🔴";
+      let threatWidth = 70;
+      if(percent >= 70) { threatLevel = "Low 🟢"; threatWidth = 25; }
+      else if(percent >= 40) { threatLevel = "Moderate 🟠"; threatWidth = 55; }
+      else { threatLevel = "High 🔴"; threatWidth = 80; }
+      document.getElementById('globalThreatText').innerText = threatLevel;
+      document.getElementById('threatMeterFill').style.width = threatWidth + "%";
+    }
+
+    function addPoints(amount, interactionId) {
+      if(!interactedRisks.has(interactionId)) {
+        interactedRisks.add(interactionId);
+        userPoints += amount;
+        if(userPoints > maxPointsPossible) userPoints = maxPointsPossible;
+        updateSecurityScore();
+        return true;
+      }
+      return false;
+    }
+
+    // Risk Cards Interaction
+    const riskCards = document.querySelectorAll('[data-risk]');
+    riskCards.forEach(card => {
+      let riskType = card.getAttribute('data-risk');
+      let pointsVal = parseInt(card.getAttribute('data-points'));
+      let detailDiv = null;
+      let progressBar = null;
+      if(riskType === 'dataLoss') { detailDiv = document.getElementById('detailsDataLoss'); progressBar = document.getElementById('progressDataLoss'); }
+      if(riskType === 'overdep') { detailDiv = document.getElementById('detailsOverdep'); progressBar = document.getElementById('progressOverdep'); }
+      if(riskType === 'highCost') { detailDiv = document.getElementById('detailsCost'); progressBar = document.getElementById('progressCost'); }
+      
+      card.addEventListener('click', (e) => {
+        if(e.target.classList.contains('info-btn') || e.target.classList.contains('btn-small')) return;
+        if(detailDiv) {
+          detailDiv.classList.toggle('show');
+        }
+        let added = addPoints(pointsVal, `risk_${riskType}`);
+        if(added && progressBar) {
+          progressBar.style.width = '100%';
+        }
+      });
+    });
+
+    // Info Buttons for Attacks
+    const infoBtns = document.querySelectorAll('.info-btn');
+    infoBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        let type = btn.getAttribute('data-info');
+        let targetDiv = null;
+        if(type === 'ransom') targetDiv = document.getElementById('ransomDetail');
+        if(type === 'phish') targetDiv = document.getElementById('phishDetail');
+        if(type === 'ddos') targetDiv = document.getElementById('ddosDetail');
+        if(targetDiv) {
+          targetDiv.classList.toggle('show');
+        }
+        addPoints(10, `attack_${type}`);
+        btn.textContent = '✓ Viewed +10 pts';
+        btn.disabled = true;
+        btn.style.opacity = '0.6';
+      });
+    });
+
+    // Quiz System
+    const quizBtns = document.querySelectorAll('.quiz-btn');
+    quizBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if(quizCompleted) {
+          document.getElementById('quizFeedback').innerHTML = '⚠️ You already answered this question!';
+          return;
+        }
+        let selected = btn.getAttribute('data-answer');
+        if(selected === 'phishing') {
+          document.getElementById('quizFeedback').innerHTML = '✅ Correct! Phishing is a social engineering attack using deceptive emails. +25 Security Points!';
+          addPoints(25, 'quiz_correct');
+        } else {
+          document.getElementById('quizFeedback').innerHTML = '❌ Incorrect. The correct answer is Phishing. +5 points for trying!';
+          addPoints(5, 'quiz_try');
+        }
+        quizCompleted = true;
+        quizBtns.forEach(b => b.disabled = true);
+      });
+    });
+
+    // Daily Tips Array
+    const tips = [
+      "🔐 Use a Password Manager to generate and store unique strong passwords.",
+      "📱 Never click on suspicious links or download attachments from unknown senders.",
+      "🔄 Keep all software updated - 60% of breaches exploit unpatched vulnerabilities.",
+      "👥 Train employees regularly - human error causes 95% of security incidents.",
+      "🌐 Always use VPN on public Wi-Fi networks to encrypt your traffic.",
+      "📧 Verify email sender addresses before sharing sensitive information.",
+      "🔑 Enable Two-Factor Authentication (2FA) on all possible accounts.",
+      "💾 Test your backups regularly - they're useless if they don't restore properly."
+    ];
+    
+    function showRandomTip() {
+      let randomIndex = Math.floor(Math.random() * tips.length);
+      document.getElementById('dailyTip').innerText = tips[randomIndex];
+    }
+    document.getElementById('newTipBtn').addEventListener('click', showRandomTip);
+    showRandomTip();
+
+    // Reset Function
+    document.getElementById('resetScoreBtn').addEventListener('click', () => {
+      userPoints = 0;
+      interactedRisks.clear();
+      quizCompleted = false;
+      
+      document.getElementById('progressDataLoss').style.width = '0%';
+      document.getElementById('progressOverdep').style.width = '0%';
+      document.getElementById('progressCost').style.width = '0%';
+      
+      document.querySelectorAll('.hidden-text.show').forEach(el => el.classList.remove('show'));
+      document.getElementById('quizFeedback').innerHTML = '';
+      
+      const infoBtnsReset = document.querySelectorAll('.info-btn');
+      infoBtnsReset.forEach(btn => {
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        if(btn.getAttribute('data-info') === 'ransom') btn.textContent = 'Learn More +10 pts';
+        if(btn.getAttribute('data-info') === 'phish') btn.textContent = 'Learn More +10 pts';
+        if(btn.getAttribute('data-info') === 'ddos') btn.textContent = 'Learn More +10 pts';
+      });
+      
+      const quizBtnsReset = document.querySelectorAll('.quiz-btn');
+      quizBtnsReset.forEach(btn => btn.disabled = false);
+      
       updateSecurityScore();
-      return true;
+    });
+
+    // Chatbot System
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWindow = document.getElementById('chatWindow');
+    chatToggle.addEventListener('click', () => {
+      if(chatWindow.style.display === 'flex') chatWindow.style.display = 'none';
+      else chatWindow.style.display = 'flex';
+    });
+    
+    const sendBtn = document.getElementById('sendChatBtn');
+    const chatInput = document.getElementById('chatInput');
+    const chatMsgsDiv = document.getElementById('chatMessages');
+
+    function addBotMessage(msg) {
+      const botDiv = document.createElement('div');
+      botDiv.style.background = '#1e293b';
+      botDiv.style.padding = '8px 12px';
+      botDiv.style.borderRadius = '16px';
+      botDiv.style.margin = '4px 0';
+      botDiv.style.fontSize = '0.85rem';
+      botDiv.innerHTML = '🤖 ' + msg;
+      chatMsgsDiv.appendChild(botDiv);
+      chatMsgsDiv.scrollTop = chatMsgsDiv.scrollHeight;
     }
-    return false;
-  }
+    
+    function addUserMessage(msg) {
+      const userDiv = document.createElement('div');
+      userDiv.style.background = '#2563eb';
+      userDiv.style.padding = '8px 12px';
+      userDiv.style.borderRadius = '16px';
+      userDiv.style.alignSelf = 'flex-end';
+      userDiv.style.margin = '4px 0';
+      userDiv.style.fontSize = '0.85rem';
+      userDiv.innerHTML = '👤 ' + msg;
+      chatMsgsDiv.appendChild(userDiv);
+      chatMsgsDiv.scrollTop = chatMsgsDiv.scrollHeight;
+    }
 
-  // Risk Cards Interaction
-  const riskCards = document.querySelectorAll('[data-risk]');
-  riskCards.forEach(card => {
-    let riskType = card.getAttribute('data-risk');
-    let pointsVal = parseInt(card.getAttribute('data-points'));
-    let detailDiv = null;
-    let progressBar = null;
-    if(riskType === 'dataLoss') { detailDiv = document.getElementById('detailsDataLoss'); progressBar = document.getElementById('progressDataLoss'); }
-    if(riskType === 'overdep') { detailDiv = document.getElementById('detailsOverdep'); progressBar = document.getElementById('progressOverdep'); }
-    if(riskType === 'highCost') { detailDiv = document.getElementById('detailsCost'); progressBar = document.getElementById('progressCost'); }
-    
-    card.addEventListener('click', (e) => {
-      if(e.target.classList.contains('info-btn') || e.target.classList.contains('btn-small')) return;
-      if(detailDiv) {
-        detailDiv.classList.toggle('show');
+    function botReply(userMsg) {
+      let lowerMsg = userMsg.toLowerCase();
+      if(lowerMsg.includes('ransom') || lowerMsg.includes('ransomware')) {
+        addBotMessage('Ransomware encrypts your files and demands payment. Prevention: Regular offline backups, update systems, and employee cybersecurity training.');
       }
-      let added = addPoints(pointsVal, `risk_${riskType}`);
-      if(added && progressBar) {
-        progressBar.style.width = '100%';
+      else if(lowerMsg.includes('phish') || lowerMsg.includes('phishing')) {
+        addBotMessage('Phishing attacks use fake emails to steal credentials. Always verify sender email, check URLs before clicking, and enable 2FA.');
       }
-    });
-  });
+      else if(lowerMsg.includes('ddos') || lowerMsg.includes('distributed')) {
+        addBotMessage('DDoS attacks flood networks with traffic. Protection: Use CDN services, implement rate limiting, and maintain redundant infrastructure.');
+      }
+      else if(lowerMsg.includes('firewall') || lowerMsg.includes('protection')) {
+        addBotMessage('Next-Generation Firewalls provide deep packet inspection, application control, and intrusion prevention. Essential for network security.');
+      }
+      else if(lowerMsg.includes('backup') || lowerMsg.includes('backup')) {
+        addBotMessage('Follow 3-2-1 backup rule: 3 copies, 2 different media types, 1 off-site location. Test restores regularly!');
+      }
+      else if(lowerMsg.includes('2fa') || lowerMsg.includes('two factor')) {
+        addBotMessage('Two-Factor Authentication adds an extra layer of security. Even if passwords are stolen, attackers cannot access accounts without the second factor.');
+      }
+      else {
+        addBotMessage('I can help with topics: Ransomware, Phishing, DDoS, Firewalls, Backups, 2FA, Security Best Practices. What would you like to know?');
+      }
+    }
 
-  // Info Buttons for Attacks
-  const infoBtns = document.querySelectorAll('.info-btn');
-  infoBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      let type = btn.getAttribute('data-info');
-      let targetDiv = null;
-      if(type === 'ransom') targetDiv = document.getElementById('ransomDetail');
-      if(type === 'phish') targetDiv = document.getElementById('phishDetail');
-      if(type === 'ddos') targetDiv = document.getElementById('ddosDetail');
-      if(targetDiv) {
-        targetDiv.classList.toggle('show');
-      }
-      addPoints(10, `attack_${type}`);
-      btn.textContent = '✓ Viewed +10 pts';
-      btn.disabled = true;
-      btn.style.opacity = '0.6';
-    });
-  });
+    function handleSend() {
+      let msg = chatInput.value.trim();
+      if(msg === "") return;
+      addUserMessage(msg);
+      botReply(msg);
+      chatInput.value = '';
+      addPoints(3, 'chat_interaction');
+    }
+    
+    sendBtn.addEventListener('click', handleSend);
+    chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') handleSend(); });
 
-  // Quiz System
-  const quizBtns = document.querySelectorAll('.quiz-btn');
-  quizBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      if(quizCompleted) {
-        document.getElementById('quizFeedback').innerHTML = '⚠️ You already answered this question!';
-        return;
-      }
-      let selected = btn.getAttribute('data-answer');
-      if(selected === 'phishing') {
-        document.getElementById('quizFeedback').innerHTML = '✅ Correct! Phishing is a social engineering attack using deceptive emails. +25 Security Points!';
-        addPoints(25, 'quiz_correct');
-      } else {
-        document.getElementById('quizFeedback').innerHTML = '❌ Incorrect. The correct answer is Phishing. +5 points for trying!';
-        addPoints(5, 'quiz_try');
-      }
-      quizCompleted = true;
-      quizBtns.forEach(b => b.disabled = true);
-    });
-  });
-
-  // Daily Tips Array
-  const tips = [
-    "🔐 Use a Password Manager to generate and store unique strong passwords.",
-    "📱 Never click on suspicious links or download attachments from unknown senders.",
-    "🔄 Keep all software updated - 60% of breaches exploit unpatched vulnerabilities.",
-    "👥 Train employees regularly - human error causes 95% of security incidents.",
-    "🌐 Always use VPN on public Wi-Fi networks to encrypt your traffic.",
-    "📧 Verify email sender addresses before sharing sensitive information.",
-    "🔑 Enable Two-Factor Authentication (2FA) on all possible accounts.",
-    "💾 Test your backups regularly - they're useless if they don't restore properly."
-  ];
-  
-  function showRandomTip() {
-    let randomIndex = Math.floor(Math.random() * tips.length);
-    document.getElementById('dailyTip').innerText = tips[randomIndex];
-  }
-  document.getElementById('newTipBtn').addEventListener('click', showRandomTip);
-  showRandomTip();
-
-  // Reset Function
-  document.getElementById('resetScoreBtn').addEventListener('click', () => {
-    userPoints = 0;
-    interactedRisks.clear();
-    quizCompleted = false;
-    
-    document.getElementById('progressDataLoss').style.width = '0%';
-    document.getElementById('progressOverdep').style.width = '0%';
-    document.getElementById('progressCost').style.width = '0%';
-    
-    document.querySelectorAll('.hidden-text.show').forEach(el => el.classList.remove('show'));
-    document.getElementById('quizFeedback').innerHTML = '';
-    
-    const infoBtnsReset = document.querySelectorAll('.info-btn');
-    infoBtnsReset.forEach(btn => {
-      btn.disabled = false;
-      btn.style.opacity = '1';
-      if(btn.getAttribute('data-info') === 'ransom') btn.textContent = 'Learn More +10 pts';
-      if(btn.getAttribute('data-info') === 'phish') btn.textContent = 'Learn More +10 pts';
-      if(btn.getAttribute('data-info') === 'ddos') btn.textContent = 'Learn More +10 pts';
-    });
-    
-    const quizBtnsReset = document.querySelectorAll('.quiz-btn');
-    quizBtnsReset.forEach(btn => btn.disabled = false);
-    
+    // Initial Score Update
     updateSecurityScore();
-  });
-
-  // Chatbot System
-  const chatToggle = document.getElementById('chatToggle');
-  const chatWindow = document.getElementById('chatWindow');
-  chatToggle.addEventListener('click', () => {
-    if(chatWindow.style.display === 'flex') chatWindow.style.display = 'none';
-    else chatWindow.style.display = 'flex';
-  });
-  
-  const sendBtn = document.getElementById('sendChatBtn');
-  const chatInput = document.getElementById('chatInput');
-  const chatMsgsDiv = document.getElementById('chatMessages');
-
-  function addBotMessage(msg) {
-    const botDiv = document.createElement('div');
-    botDiv.style.background = '#1e293b';
-    botDiv.style.padding = '8px 12px';
-    botDiv.style.borderRadius = '16px';
-    botDiv.style.margin = '4px 0';
-    botDiv.style.fontSize = '0.85rem';
-    botDiv.innerHTML = '🤖 ' + msg;
-    chatMsgsDiv.appendChild(botDiv);
-    chatMsgsDiv.scrollTop = chatMsgsDiv.scrollHeight;
-  }
-  
-  function addUserMessage(msg) {
-    const userDiv = document.createElement('div');
-    userDiv.style.background = '#2563eb';
-    userDiv.style.padding = '8px 12px';
-    userDiv.style.borderRadius = '16px';
-    userDiv.style.alignSelf = 'flex-end';
-    userDiv.style.margin = '4px 0';
-    userDiv.style.fontSize = '0.85rem';
-    userDiv.innerHTML = '👤 ' + msg;
-    chatMsgsDiv.appendChild(userDiv);
-    chatMsgsDiv.scrollTop = chatMsgsDiv.scrollHeight;
-  }
-
-  function botReply(userMsg) {
-    let lowerMsg = userMsg.toLowerCase();
-    if(lowerMsg.includes('ransom') || lowerMsg.includes('ransomware')) {
-      addBotMessage('Ransomware encrypts your files and demands payment. Prevention: Regular offline backups, update systems, and employee cybersecurity training.');
-    }
-    else if(lowerMsg.includes('phish') || lowerMsg.includes('phishing')) {
-      addBotMessage('Phishing attacks use fake emails to steal credentials. Always verify sender email, check URLs before clicking, and enable 2FA.');
-    }
-    else if(lowerMsg.includes('ddos') || lowerMsg.includes('distributed')) {
-      addBotMessage('DDoS attacks flood networks with traffic. Protection: Use CDN services, implement rate limiting, and maintain redundant infrastructure.');
-    }
-    else if(lowerMsg.includes('firewall') || lowerMsg.includes('protection')) {
-      addBotMessage('Next-Generation Firewalls provide deep packet inspection, application control, and intrusion prevention. Essential for network security.');
-    }
-    else if(lowerMsg.includes('backup') || lowerMsg.includes('backup')) {
-      addBotMessage('Follow 3-2-1 backup rule: 3 copies, 2 different media types, 1 off-site location. Test restores regularly!');
-    }
-    else if(lowerMsg.includes('2fa') || lowerMsg.includes('two factor')) {
-      addBotMessage('Two-Factor Authentication adds an extra layer of security. Even if passwords are stolen, attackers cannot access accounts without the second factor.');
-    }
-    else {
-      addBotMessage('I can help with topics: Ransomware, Phishing, DDoS, Firewalls, Backups, 2FA, Security Best Practices. What would you like to know?');
-    }
-  }
-
-  function handleSend() {
-    let msg = chatInput.value.trim();
-    if(msg === "") return;
-    addUserMessage(msg);
-    botReply(msg);
-    chatInput.value = '';
-    addPoints(3, 'chat_interaction');
-  }
-  
-  sendBtn.addEventListener('click', handleSend);
-  chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') handleSend(); });
-
-  // Initial Score Update
-  updateSecurityScore();
-</script>
-</body>
-</html>
+  </script>
+  </body>
+  </html>
